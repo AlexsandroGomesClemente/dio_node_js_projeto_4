@@ -1,55 +1,68 @@
-<!--START_SECTION:header-->
-<div align="center">
-  <p align="center">
-    <img 
-      alt="DIO Education" 
-      src="https://raw.githubusercontent.com/digitalinnovationone/template-github-trilha/main/.github/assets/logo.webp" 
-      width="100px" 
-    />
-    <h1>Gerenciador de Podcasts</h1>
-  </p>
-</div>
-<!--END_SECTION:header-->
+# Podcast Manager
 
-<p align="center">
-  <img src="https://img.shields.io/static/v1?label=DIO&message=Education&color=E94D5F&labelColor=202024" alt="DIO Project" />
-  <a href="NIVEL"><img  src="https://img.shields.io/static/v1?label=Nivel&message=Basico&color=E94D5F&labelColor=202024" alt="Nivel"></a>
+## Descrição
 
-</p>
+O Podcast Manager é uma aplicação inspirada no estilo da Netflix, que permite centralizar diferentes episódios de podcasts separados por categoria. Este projeto visa facilitar o acesso e a organização de episódios de podcasts em formato de vídeo, proporcionando uma experiência de navegação intuitiva e agradável para os usuários.
 
-<br/>
-<br/>
+## Funcionalidades
 
-## 💻 Sobre o Projeto
+- **Listar os episódios de podcasts em sessões de categorias:** Os episódios são organizados em categorias como saúde, bodybuilder, mentalidade e humor, permitindo aos usuários explorar facilmente os conteúdos disponíveis.
+- **Filtrar episódios por nome de podcast:** Os usuários podem realizar buscas específicas por nome de podcast, facilitando o acesso aos episódios desejados.
 
-Vamos um gerenciador de podcasts usando o node.js e fazendo requisições http usando recursos nativos.
+## Implementação
 
-## 📚 Pré-requisitos de Habilidades e Níveis de Conhecimento
+### Listar os episódios de podcasts em sessões de categorias
 
-Antes de ingressar neste conteúdo, é necessário possuir conhecimento prévio nas seguintes áreas:
+- **Endpoint:** `GET /list`
+- **Descrição:** Retorna uma lista de episódios de podcasts organizados por categorias.
+- **Exemplo de resposta:**
 
-- Lógica de programação
-- Javascript | Básico
-- NodeJS | Básico
-- Node Modules
-- NPM, Packages, Dependencies
-- Variáveis ambiente (.env)
+```json
+[
+  {
+    "podcastName": "flow",
+    "episode": "CBUM - Flow #319",
+    "videoId": "pQSuQmUfS30",
+    "cover": "https://i.ytimg.com/vi/pQSuQmUfS30/maxresdefault.jpg",
+    "link": "https://www.youtube.com/watch?v=pQSuQmUfS30",
+    "categories": ["saúde", "esporte", "bodybuilder"]
+  },
+  {
+    "podcastName": "flow",
+    "episode": "RUBENS BARRICHELLO - Flow #339",
+    "videoId": "4KDGTdiOV4I",
+    "cover": "https://i.ytimg.com/vi/4KDGTdiOV4I/maxresdefault.jpg",
+    "link": "https://www.youtube.com/watch?v=4KDGTdiOV4I",
+    "categories": ["esporte", "corrida"]
+  }
+]
+```
 
-## 🛠️ Habilidades e Sub-habilidades que vamos aprender neste conteúdo
+### Filtrar episódios por nome de podcast
 
-- Como fazer req e response usando recursos proprios do node.js
+- **Endpoint:** `GET /episode?podcastName={nome}`
+- **Descrição:** Retorna uma lista de episódios de podcast com base no nome do podcast fornecido.
+- **Exemplo de requisição:** `GET /episode?podcastName=flow`
 
-- Como refatorar o código deixando ele mas limpo
+## Tecnologias Utilizadas
 
-- Modos diferente de trabalhar com node.js
+- **[TypeScript](https://www.typescriptlang.org/):** Linguagem de programação utilizada para o desenvolvimento do projeto.
+- **[Tsup](https://github.com/egoist/tsup):** Ferramenta de construção e empacotamento para projetos TypeScript.
+- **[Tsx](https://github.com/egoist/tsx):** Compilador TypeScript que suporta a construção de projetos.
+- **[Node.js](https://nodejs.org/):** Ambiente de execução JavaScript que permite executar código JavaScript do lado do servidor.
+- **[@types/node](https://www.npmjs.com/package/@types/node):** Pacote de definições de tipos para Node.js para auxiliar no desenvolvimento com TypeScript.
 
+## Como Utilizar
 
-## 🎯 Objetivos e Resultados Esperados
+1. Clone este repositório.
+2. Instale as dependências usando `npm install`.
+3. Inicie o servidor executando `start:dev`.
+4. Acesse os endpoints fornecidos para listar os episódios de podcasts ou filtrá-los por nome de podcast.
 
-Após a conclusão do curso/projeto, os estudantes estarão aptos a:
+## Contribuição
 
-- Criar projetos nodejs que gerem multiplas dependências
+Contribuições são bem-vindas! Sinta-se à vontade para abrir problemas ou enviar solicitações de recebimento (pull requests) para melhorar este projeto.
 
-<!--START_SECTION:footer-->
+## Licença
 
-<br />
+Este projeto está licenciado sob a [MIT License](LICENSE).
